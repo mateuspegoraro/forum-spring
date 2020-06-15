@@ -58,6 +58,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	// Configurações de autorização de acesso de recursos estáticos (js, css, imagens, etc...). Aplicações backend não precisam disso.
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
 	}
 	
 	// gerando um hash inicial para colocar no insert do usuário no arquivo data.sql
